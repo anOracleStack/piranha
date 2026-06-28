@@ -27,6 +27,15 @@ export const metadata: Metadata = {
     index: true,
     follow: true,
   },
+  icons: {
+    icon: "/images/brand/logo-gold.svg",
+    apple: [
+      {
+        url: "/images/brand/pwa-icon-192.svg",
+        sizes: "192x192",
+      },
+    ],
+  },
 };
 
 export default function RootLayout({
