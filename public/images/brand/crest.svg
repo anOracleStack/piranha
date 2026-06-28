@@ -1,15 +1,205 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 1200" role="img" aria-labelledby="title desc">
-  <title id="title">House of Piranha crest</title>
-  <desc id="desc">A black and gold heraldic crest with leather texture lines.</desc>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 1200" role="img" aria-labelledby="crest-title crest-desc">
+  <title id="crest-title">House of Piranha — Coat of Arms</title>
+  <desc id="crest-desc">A gold and obsidian heraldic crest with crown, piranha charge, scale texture, and motto banner.</desc>
+
   <rect width="900" height="1200" fill="#050505"/>
-  <path d="M450 76 754 190v264c0 302-156 524-304 658C302 978 146 756 146 454V190L450 76Z" fill="#101314" stroke="#D4AF37" stroke-width="20"/>
-  <path d="M450 166 674 251v218c0 223-106 402-224 520C332 871 226 692 226 469V251l224-85Z" fill="#080909" stroke="#5A171C" stroke-width="8"/>
-  <path d="M235 621c126-236 354-342 520-248-45 30-81 69-107 119 43 28 76 71 97 130-173 51-342 51-510-1Z" fill="#D4AF37"/>
-  <path d="M341 584c112-94 225-126 339-95-89 22-168 66-237 132l-102-37Z" fill="#050505" opacity=".78"/>
-  <circle cx="635" cy="402" r="18" fill="#050505"/>
-  <path d="M260 612 145 514l31 179 84-81Z" fill="#D4AF37"/>
-  <path d="M529 499 471 424l-48 103-56-88-42 116" fill="none" stroke="#050505" stroke-width="26" stroke-linejoin="round"/>
-  <g opacity=".23" stroke="#F0C84A" stroke-width="2">
-    <path d="M119 278h662M103 359h694M98 440h704M113 521h674M151 602h598M189 683h522M231 764h438M284 845h332"/>
+
+  <!-- ── Decorative outer rings ── -->
+  <circle cx="450" cy="530" r="342" fill="none" stroke="#D4AF37" stroke-width="1.5" opacity="0.12"/>
+  <circle cx="450" cy="530" r="326" fill="none" stroke="#D4AF37" stroke-width="0.75" opacity="0.07"/>
+
+  <!-- ── Heraldic crown (above shield) ── -->
+  <!-- Crown base band -->
+  <path d="M298,188 L602,188 L602,228 L298,228 Z" fill="#D4AF37"/>
+  <path d="M300,190 L600,190 L600,226 L300,226 Z" fill="#0d1010"/>
+  <path d="M300,190 L600,190 L600,226 L300,226 Z" fill="none" stroke="#D4AF37" stroke-width="1" opacity="0.5"/>
+  <!-- Crown points (5 peaks) -->
+  <path d="M310,228 L310,170 L340,140 L370,170 L370,228" fill="#D4AF37"/>
+  <path d="M380,228 L380,158 L420,118 L460,158 L460,228" fill="#D4AF37"/>
+  <path d="M470,228 L470,158 L510,118 L550,158 L550,228" fill="#D4AF37"/>
+  <path d="M560,228 L560,170 L590,140 L620,170 L620,228" fill="#D4AF37"/>
+  <path d="M290,228 L290,175 L310,152 L330,175 L330,228" fill="#D4AF37"/>
+  <!-- Crown jewels (dots on peaks) -->
+  <circle cx="340" cy="138" r="7" fill="#D4AF37"/>
+  <circle cx="460" cy="116" r="10" fill="#D4AF37"/>
+  <circle cx="510" cy="116" r="10" fill="#D4AF37"/>
+  <circle cx="590" cy="138" r="7" fill="#D4AF37"/>
+  <circle cx="310" cy="150" r="5" fill="#D4AF37"/>
+  <!-- Crown inner accent -->
+  <rect x="302" y="194" width="296" height="28" rx="2" fill="none" stroke="rgba(212,175,55,0.4)" stroke-width="1"/>
+
+  <!-- ── Main shield body ── -->
+  <path d="M450 236 L790 360 V560 C790 810 660 1000 450 1090 C240 1000 110 810 110 560 V360 Z" fill="#101414" stroke="#D4AF37" stroke-width="14"/>
+
+  <!-- Inner shield (first layer) -->
+  <path d="M450 278 L752 390 V558 C752 778 636 952 450 1040 C264 952 148 778 148 558 V390 Z" fill="#090c0c" stroke="#5A171C" stroke-width="6"/>
+
+  <!-- Inner shield (second layer — subtler) -->
+  <path d="M450 312 L722 414 V558 C722 754 618 910 450 994 C282 910 178 754 178 558 V414 Z" fill="none" stroke="rgba(212,175,55,0.15)" stroke-width="2"/>
+
+  <!-- ── Leather cross-hatch texture lines ── -->
+  <g opacity="0.18" stroke="#F0C84A" stroke-width="1.5">
+    <path d="M165 395 L735 395"/>
+    <path d="M148 450 L752 450"/>
+    <path d="M140 510 L760 510"/>
+    <path d="M148 570 L752 570"/>
+    <path d="M165 630 L735 630"/>
+    <path d="M195 690 L705 690"/>
+    <path d="M230 750 L670 750"/>
+    <path d="M275 810 L625 810"/>
+    <path d="M330 870 L570 870"/>
+    <path d="M390 930 L510 930"/>
   </g>
+
+  <!-- ── Piranha charge (matches logo geometry) ── -->
+  <!-- Main body — rounded teardrop, wider at head -->
+  <path d="
+    M200,620
+    C185,570 188,510 210,470
+    C235,428 278,410 330,402
+    C380,394 430,398 475,410
+    C520,422 558,444 578,474
+    C598,504 600,540 590,574
+    C580,608 556,638 522,656
+    C488,674 446,680 400,678
+    C354,676 308,664 270,644
+    C232,624 215,670 200,620 Z"
+    fill="#D4AF37"
+  />
+
+  <!-- Piranha body shadow / depth -->
+  <path d="
+    M220,610
+    C208,567 212,512 232,476
+    C254,436 292,420 340,413
+    C388,406 435,410 478,422
+    C516,434 548,452 568,480
+    C584,502 582,536 572,568
+    C562,598 540,626 506,642
+    C473,658 434,664 390,662
+    C348,660 306,648 272,630
+    C246,616 234,653 220,610 Z"
+    fill="none"
+    stroke="rgba(5,5,5,0.5)"
+    stroke-width="8"
+  />
+
+  <!-- ── Dorsal fin ── -->
+  <path d="M320,403 C340,342 390,310 440,318 C480,322 515,345 540,375 L480,402 Z" fill="#D4AF37"/>
+  <path d="M320,403 C340,342 390,310 440,318 C480,322 515,345 540,375 L480,402 Z" fill="none" stroke="rgba(5,5,5,0.4)" stroke-width="4"/>
+
+  <!-- ── Tail fins (forked, at left) ── -->
+  <!-- Upper tail lobe -->
+  <path d="M200,610 C165,566 130,525 95,488 C128,500 162,518 200,530 Z" fill="#D4AF37"/>
+  <!-- Lower tail lobe -->
+  <path d="M200,630 C165,674 130,715 98,748 C130,732 162,712 200,698 Z" fill="#D4AF37"/>
+  <!-- Tail center wedge -->
+  <path d="M198,618 L95,488 L198,560 L95,748 L198,668 Z" fill="#D4AF37"/>
+
+  <!-- ── Pectoral fin ── -->
+  <path d="M510,465 C545,440 590,432 615,450 C600,478 575,500 550,510 Z" fill="#D4AF37"/>
+
+  <!-- ── Ventral fin ── -->
+  <path d="M380,676 C368,710 358,740 360,760 C380,742 398,720 410,694 Z" fill="#D4AF37"/>
+
+  <!-- ── Scale pattern on body (overlapping arcs matching background) ── -->
+  <g fill="none" stroke="rgba(5,5,5,0.55)" stroke-width="3">
+    <!-- Row 1 -->
+    <path d="M280,490 A28,18 0 0,0 336,490"/>
+    <path d="M336,490 A28,18 0 0,0 392,490"/>
+    <path d="M392,490 A28,18 0 0,0 448,490"/>
+    <path d="M448,490 A28,18 0 0,0 504,490"/>
+    <path d="M504,490 A28,18 0 0,0 560,490"/>
+    <!-- Row 2 (offset) -->
+    <path d="M252,520 A28,18 0 0,0 308,520"/>
+    <path d="M308,520 A28,18 0 0,0 364,520"/>
+    <path d="M364,520 A28,18 0 0,0 420,520"/>
+    <path d="M420,520 A28,18 0 0,0 476,520"/>
+    <path d="M476,520 A28,18 0 0,0 532,520"/>
+    <path d="M532,520 A28,18 0 0,0 588,520"/>
+    <!-- Row 3 -->
+    <path d="M258,550 A28,18 0 0,0 314,550"/>
+    <path d="M314,550 A28,18 0 0,0 370,550"/>
+    <path d="M370,550 A28,18 0 0,0 426,550"/>
+    <path d="M426,550 A28,18 0 0,0 482,550"/>
+    <path d="M482,550 A28,18 0 0,0 538,550"/>
+    <path d="M538,550 A28,18 0 0,0 572,550"/>
+    <!-- Row 4 -->
+    <path d="M268,580 A28,18 0 0,0 324,580"/>
+    <path d="M324,580 A28,18 0 0,0 380,580"/>
+    <path d="M380,580 A28,18 0 0,0 436,580"/>
+    <path d="M436,580 A28,18 0 0,0 492,580"/>
+    <path d="M492,580 A28,18 0 0,0 548,580"/>
+    <!-- Row 5 -->
+    <path d="M280,610 A28,18 0 0,0 336,610"/>
+    <path d="M336,610 A28,18 0 0,0 392,610"/>
+    <path d="M392,610 A28,18 0 0,0 448,610"/>
+    <path d="M448,610 A28,18 0 0,0 504,610"/>
+    <!-- Row 6 -->
+    <path d="M292,640 A28,18 0 0,0 348,640"/>
+    <path d="M348,640 A28,18 0 0,0 404,640"/>
+    <path d="M404,640 A28,18 0 0,0 460,640"/>
+    <path d="M460,640 A28,18 0 0,0 508,640"/>
+  </g>
+
+  <!-- ── Jaw ── -->
+  <!-- Upper jaw extension -->
+  <path d="M578,480 C605,476 640,468 660,455 C648,480 628,500 600,510 Z" fill="#D4AF37"/>
+  <!-- Lower jaw extension (underbite) -->
+  <path d="M580,574 C608,578 645,590 665,606 C648,620 624,626 598,618 Z" fill="#D4AF37"/>
+  <!-- Teeth (upper) -->
+  <path d="M598,508 L608,478 L618,506 M618,506 L628,476 L636,504 M636,504 L646,474 L654,502"
+    fill="none" stroke="#050505" stroke-width="3" stroke-linejoin="round"/>
+  <!-- Teeth (lower) -->
+  <path d="M600,618 L610,648 L620,620 M620,620 L630,650 L638,622 M638,622 L648,652 L655,622"
+    fill="none" stroke="#050505" stroke-width="3" stroke-linejoin="round"/>
+  <!-- Mouth opening indicator -->
+  <path d="M598,508 C630,530 648,560 598,618" fill="none" stroke="rgba(5,5,5,0.6)" stroke-width="6"/>
+
+  <!-- ── Eye ── -->
+  <circle cx="575" cy="455" r="22" fill="#050505"/>
+  <circle cx="575" cy="455" r="16" fill="#1a1a1a"/>
+  <circle cx="575" cy="455" r="10" fill="#050505"/>
+  <circle cx="568" cy="448" r="4" fill="#D4AF37" opacity="0.9"/>
+
+  <!-- ── Side scrollwork (flanking the shield) ── -->
+  <!-- Left scroll -->
+  <path d="M82,480 C56,500 44,540 56,580 C68,620 100,640 120,630 C140,620 148,595 136,575 C124,555 104,558 100,575 C96,592 106,602 118,598"
+    fill="none" stroke="#D4AF37" stroke-width="3" opacity="0.5" stroke-linecap="round"/>
+  <path d="M82,480 C62,455 62,420 82,400 C102,380 130,380 140,400"
+    fill="none" stroke="#D4AF37" stroke-width="2" opacity="0.35" stroke-linecap="round"/>
+  <path d="M82,640 C58,660 52,700 68,730 C84,760 116,765 130,748"
+    fill="none" stroke="#D4AF37" stroke-width="2" opacity="0.35" stroke-linecap="round"/>
+  <!-- Right scroll (mirror) -->
+  <path d="M818,480 C844,500 856,540 844,580 C832,620 800,640 780,630 C760,620 752,595 764,575 C776,555 796,558 800,575 C804,592 794,602 782,598"
+    fill="none" stroke="#D4AF37" stroke-width="3" opacity="0.5" stroke-linecap="round"/>
+  <path d="M818,480 C838,455 838,420 818,400 C798,380 770,380 760,400"
+    fill="none" stroke="#D4AF37" stroke-width="2" opacity="0.35" stroke-linecap="round"/>
+  <path d="M818,640 C842,660 848,700 832,730 C816,760 784,765 770,748"
+    fill="none" stroke="#D4AF37" stroke-width="2" opacity="0.35" stroke-linecap="round"/>
+
+  <!-- ── Motto banner ── -->
+  <!-- Banner ribbon shape -->
+  <path d="M170,1055 C170,1040 200,1030 230,1038 L450,1030 L670,1038 C700,1030 730,1040 730,1055 L720,1082 C720,1097 700,1106 670,1098 L450,1105 L230,1098 C200,1106 180,1097 180,1082 Z"
+    fill="#0d1010" stroke="#D4AF37" stroke-width="2"/>
+  <!-- Banner tail left -->
+  <path d="M180,1082 L140,1100 L185,1070 Z" fill="#D4AF37" opacity="0.8"/>
+  <!-- Banner tail right -->
+  <path d="M720,1082 L760,1100 L715,1070 Z" fill="#D4AF37" opacity="0.8"/>
+  <!-- Motto text -->
+  <text x="450" y="1074" text-anchor="middle" fill="#D4AF37"
+    font-family="Georgia, 'Playfair Display', serif"
+    font-size="28" font-weight="400" letter-spacing="6">
+    LUXURY THAT BITES BACK
+  </text>
+
+  <!-- ── Founding ornament ── -->
+  <text x="450" y="1138" text-anchor="middle" fill="#D4AF37"
+    font-family="Georgia, serif"
+    font-size="18" font-weight="400" letter-spacing="8" opacity="0.6">
+    EST. MMXXIV
+  </text>
+  <!-- Small divider ornament -->
+  <path d="M340,1148 L410,1148 M490,1148 L560,1148" stroke="#D4AF37" stroke-width="1" opacity="0.4"/>
+  <circle cx="450" cy="1148" r="3" fill="#D4AF37" opacity="0.5"/>
 </svg>

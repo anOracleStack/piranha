@@ -6,6 +6,7 @@ import { ShoppingBag, UserRound } from "lucide-react";
 import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 import SoundController from "@/components/ui/SoundController";
+import TransitionLink from "@/components/ui/TransitionLink";
 import { useCartStore } from "@/store/cart";
 
 const navItems = [
@@ -31,28 +32,29 @@ export default function NavigationShell() {
 
   return (
     <header className={`site-nav ${scrolled ? "site-nav-scrolled" : ""}`}>
-      <Link href="/" className="brand-mark" aria-label="House of Piranha home">
-        <Image src="/piranha-logo.jpeg" alt="" width={34} height={34} priority unoptimized />
+      {/* Brand mark — uses high-quality piranha-logo.jpeg */}
+      <TransitionLink href="/" className="brand-mark" aria-label="House of Piranha home">
+        <Image src="/piranha-logo.jpeg" alt="" width={36} height={36} priority unoptimized />
         <span>House of Piranha</span>
-      </Link>
+      </TransitionLink>
 
       <nav className="desktop-nav" aria-label="Primary navigation">
         {navItems.map((item) => (
-          <Link
+          <TransitionLink
             key={item.href}
             href={item.href}
             className={pathname.startsWith(item.href) ? "nav-link nav-link-active" : "nav-link"}
           >
             {item.label}
-          </Link>
+          </TransitionLink>
         ))}
       </nav>
 
       <div className="nav-actions">
         <SoundController />
-        <Link className="icon-button" href="/the-vault" aria-label="Open Vault" title="Open Vault">
+        <TransitionLink className="icon-button" href="/the-vault" aria-label="Open Vault" title="Open Vault">
           <UserRound className="size-4" aria-hidden />
-        </Link>
+        </TransitionLink>
         <button className="icon-button cart-button" type="button" onClick={openCart} aria-label="Open cart" title="Open cart">
           <ShoppingBag className="size-4" aria-hidden />
           {total > 0 ? <span className="cart-count">{total}</span> : null}

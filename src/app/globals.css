@@ -79,15 +79,29 @@ body {
   min-height: 100vh;
   margin: 0;
   overflow-x: hidden;
-  /* Fish scale texture sits above the dark gradients, behind all content */
+  /* Overlapping arc scales (matches piranha logo scale geometry) + depth gradients */
   background:
-    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='40'%3E%3Cpath d='M0,40 Q30,0 60,40' fill='none' stroke='rgba(212,175,55,.055)' stroke-width='.75'/%3E%3Cpath d='M0,20 Q15,-16 30,20' fill='none' stroke='rgba(212,175,55,.055)' stroke-width='.75'/%3E%3Cpath d='M30,20 Q45,-16 60,20' fill='none' stroke='rgba(212,175,55,.055)' stroke-width='.75'/%3E%3C/svg%3E")
-      center / 60px 40px repeat,
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60'%3E%3Cpath d='M0,60 A30,30 0 0,0 60,60' fill='none' stroke='rgba(212,175,55,.072)' stroke-width='1'/%3E%3Cpath d='M-30,30 A30,30 0 0,0 30,30' fill='none' stroke='rgba(212,175,55,.072)' stroke-width='1'/%3E%3Cpath d='M30,30 A30,30 0 0,0 90,30' fill='none' stroke='rgba(212,175,55,.072)' stroke-width='1'/%3E%3C/svg%3E")
+      center / 60px 60px repeat,
     radial-gradient(circle at 16% 8%, rgba(15, 71, 70, 0.28), transparent 26rem),
     linear-gradient(120deg, rgba(90, 23, 28, 0.14), transparent 32rem),
     var(--obsidian);
   color: var(--bone);
   font-family: var(--font-body);
+}
+
+/* Leather grain — fine cross-hatch at near-zero opacity adds tactile depth */
+html::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background-image:
+    repeating-linear-gradient(45deg, transparent 0, transparent 1px, rgba(212,175,55,.009) 0, rgba(212,175,55,.009) 2px),
+    repeating-linear-gradient(-45deg, transparent 0, transparent 1px, rgba(0,0,0,.018) 0, rgba(0,0,0,.018) 2px);
+  background-size: 3px 3px;
+  mix-blend-mode: screen;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -2050,7 +2064,90 @@ svg {
   }
 }
 
-/* Piranha cursor */
+/* ── Zipper page transition ──────────────────────────────────────────── */
+
+.zipper-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9000;
+  pointer-events: none;
+}
+
+.zipper-overlay.is-active {
+  pointer-events: all;
+}
+
+.zipper-panel-top,
+.zipper-panel-bottom {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 50vh;
+  background: var(--obsidian);
+  will-change: transform;
+}
+
+.zipper-panel-top  { top: 0; }
+.zipper-panel-bottom { bottom: 0; }
+
+/* Subtle leather grain on the closing panels */
+.zipper-panel-top::after,
+.zipper-panel-bottom::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60'%3E%3Cpath d='M0,60 A30,30 0 0,0 60,60' fill='none' stroke='rgba(212,175,55,.055)' stroke-width='.8'/%3E%3Cpath d='M-30,30 A30,30 0 0,0 30,30' fill='none' stroke='rgba(212,175,55,.055)' stroke-width='.8'/%3E%3Cpath d='M30,30 A30,30 0 0,0 90,30' fill='none' stroke='rgba(212,175,55,.055)' stroke-width='.8'/%3E%3C/svg%3E");
+  background-size: 60px 60px;
+  opacity: 0.6;
+}
+
+/* Zipper seam line */
+.zipper-seam {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 2px;
+  transform: translateY(-50%);
+  overflow: visible;
+}
+
+/* Gold teeth marks along the seam */
+.zipper-seam::before {
+  content: '';
+  position: absolute;
+  inset: -1px 0;
+  background: repeating-linear-gradient(
+    90deg,
+    transparent 0,
+    transparent 3px,
+    rgba(212, 175, 55, 0.45) 3px,
+    rgba(212, 175, 55, 0.45) 7px
+  );
+}
+
+/* Zipper head container */
+.zipper-head {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  will-change: transform;
+  filter: drop-shadow(0 4px 12px rgba(0,0,0,0.7)) drop-shadow(0 0 20px rgba(212,175,55,0.25));
+}
+
+/* Pendant swing animation */
+@keyframes pendant-swing {
+  0%, 100% { transform: rotate(-4deg); }
+  50%       { transform: rotate(4deg); }
+}
+
+.zipper-pendant-group {
+  transform-origin: 24px 56px;
+  animation: pendant-swing 0.45s ease-in-out infinite;
+}
+
+/* ── Piranha cursor */
 :root {
   cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"><circle cx="16" cy="16" r="6" fill="%23D4AF37"/><path d="M16 10 L20 16 L16 22 L12 16 Z" fill="%23D4AF37" opacity="0.8"/></svg>') 16 16, auto;
 }

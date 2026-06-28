@@ -5,6 +5,8 @@ import CartDrawer from "@/components/product/CartDrawer";
 import MobileBottomDock from "@/components/nav/MobileBottomDock";
 import NavigationShell from "@/components/nav/NavigationShell";
 import VaultTransition from "@/components/motion/VaultTransition";
+import ZipperOverlay from "@/components/motion/ZipperOverlay";
+import { ZipperProvider } from "@/contexts/ZipperContext";
 import CustomCursor from "@/components/ui/CustomCursor";
 import "./globals.css";
 
@@ -35,10 +37,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <NavigationShell />
-        <VaultTransition>{children}</VaultTransition>
-        <MobileBottomDock />
-        <CartDrawer />
+        <ZipperProvider>
+          <NavigationShell />
+          <VaultTransition>{children}</VaultTransition>
+          <MobileBottomDock />
+          <CartDrawer />
+          <ZipperOverlay />
+        </ZipperProvider>
         <CustomCursor />
         <Analytics />
         <SpeedInsights />
