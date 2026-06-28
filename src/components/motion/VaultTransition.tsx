@@ -1,0 +1,23 @@
+"use client";
+
+import { AnimatePresence, motion } from "framer-motion";
+import { usePathname } from "next/navigation";
+import type { ReactNode } from "react";
+
+export default function VaultTransition({ children }: { children: ReactNode }) {
+  const pathname = usePathname();
+
+  return (
+    <AnimatePresence mode="wait">
+      <motion.div
+        key={pathname}
+        initial={{ opacity: 0, filter: "blur(8px)" }}
+        animate={{ opacity: 1, filter: "blur(0px)" }}
+        exit={{ opacity: 0, filter: "blur(8px)" }}
+        transition={{ duration: 0.34, ease: "easeOut" }}
+      >
+        {children}
+      </motion.div>
+    </AnimatePresence>
+  );
+}

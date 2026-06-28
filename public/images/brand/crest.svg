@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 1200" role="img" aria-labelledby="title desc">
+  <title id="title">House of Piranha crest</title>
+  <desc id="desc">A black and gold heraldic crest with leather texture lines.</desc>
+  <rect width="900" height="1200" fill="#050505"/>
+  <path d="M450 76 754 190v264c0 302-156 524-304 658C302 978 146 756 146 454V190L450 76Z" fill="#101314" stroke="#D4AF37" stroke-width="20"/>
+  <path d="M450 166 674 251v218c0 223-106 402-224 520C332 871 226 692 226 469V251l224-85Z" fill="#080909" stroke="#5A171C" stroke-width="8"/>
+  <path d="M235 621c126-236 354-342 520-248-45 30-81 69-107 119 43 28 76 71 97 130-173 51-342 51-510-1Z" fill="#D4AF37"/>
+  <path d="M341 584c112-94 225-126 339-95-89 22-168 66-237 132l-102-37Z" fill="#050505" opacity=".78"/>
+  <circle cx="635" cy="402" r="18" fill="#050505"/>
+  <path d="M260 612 145 514l31 179 84-81Z" fill="#D4AF37"/>
+  <path d="M529 499 471 424l-48 103-56-88-42 116" fill="none" stroke="#050505" stroke-width="26" stroke-linejoin="round"/>
+  <g opacity=".23" stroke="#F0C84A" stroke-width="2">
+    <path d="M119 278h662M103 359h694M98 440h704M113 521h674M151 602h598M189 683h522M231 764h438M284 845h332"/>
+  </g>
+</svg>

@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" role="img" aria-labelledby="title desc">
+  <title id="title">Black Card Key</title>
+  <desc id="desc">A black NFC card with gold piranha crest.</desc>
+  <rect width="1200" height="900" fill="#070909"/>
+  <g transform="translate(196 181) rotate(-7 404 270)">
+    <rect x="0" y="0" width="808" height="540" rx="44" fill="#0f1212" stroke="#D4AF37" stroke-width="8"/>
+    <rect x="36" y="34" width="736" height="472" rx="29" fill="#111716" stroke="#263330" stroke-width="3"/>
+    <path d="M160 146c74-89 187-125 340-108-34 40-77 68-129 84 47 18 85 53 114 104-119 34-227 11-325-80Z" fill="#D4AF37"/>
+    <circle cx="489" cy="75" r="12" fill="#050505"/>
+    <path d="M180 376h440" stroke="#D4AF37" stroke-width="9" stroke-linecap="round"/>
+    <path d="M180 416h250" stroke="#5A171C" stroke-width="9" stroke-linecap="round"/>
+    <text x="180" y="334" fill="#F3F3F3" font-family="Arial, sans-serif" font-size="38" letter-spacing="10">VAULT KEY</text>
+  </g>
+  <ellipse cx="600" cy="747" rx="395" ry="42" fill="#000" opacity=".55"/>
+</svg>
