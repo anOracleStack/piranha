@@ -32,7 +32,7 @@ export default function NavigationShell() {
   return (
     <header className={`site-nav ${scrolled ? "site-nav-scrolled" : ""}`}>
       <Link href="/" className="brand-mark" aria-label="House of Piranha home">
-        <Image src="/images/brand/logo-gold.svg" alt="" width={34} height={34} priority unoptimized />
+        <Image src="/piranha-logo.jpeg" alt="" width={34} height={34} priority unoptimized />
         <span>House of Piranha</span>
       </Link>
 
