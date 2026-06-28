@@ -627,6 +627,78 @@ svg {
   line-height: 1.7;
 }
 
+.collections-hero {
+  display: grid;
+  max-width: 920px;
+  gap: 14px;
+  padding-top: 68px;
+  margin-bottom: 64px;
+}
+
+.collections-hero h1 {
+  font-size: clamp(4rem, 11vw, 10rem);
+}
+
+.collections-hero p {
+  margin: 0;
+  color: var(--bone);
+  font-size: clamp(1.1rem, 2.2vw, 1.6rem);
+  line-height: 1.5;
+}
+
+.collections-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 28px;
+  margin-bottom: 80px;
+}
+
+.collection-card-link {
+  text-decoration: none;
+  color: inherit;
+  transition: transform 300ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.collection-card-link:hover {
+  transform: translateY(-4px);
+}
+
+.collection-card {
+  display: grid;
+  gap: 20px;
+  padding: 32px;
+  border: 1px solid var(--border);
+  background: rgba(20, 23, 22, 0.44);
+}
+
+.collection-card-header h2 {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 4vw, 3rem);
+  font-weight: 400;
+  line-height: 1.1;
+}
+
+.collection-dek {
+  margin: 0;
+  color: var(--house-gold);
+  font-size: 1.1rem;
+}
+
+.collection-ritual {
+  margin: 0;
+  color: var(--bone-dim);
+  line-height: 1.7;
+  font-size: 0.95rem;
+}
+
+.collection-cta {
+  font-size: 0.9rem;
+  color: var(--house-gold-bright);
+  letter-spacing: 0.08em;
+  font-weight: 500;
+}
+
 .pdp-shell {
   display: grid;
   grid-template-columns: minmax(0, 0.66fr) minmax(340px, 0.34fr);
