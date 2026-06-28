@@ -1,11 +1,11 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { HouseLink } from "@/components/ui/HouseButton";
+import TransitionLink from "@/components/ui/TransitionLink";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -82,7 +82,7 @@ function LookbookFrame({
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
     >
-      <Link
+      <TransitionLink
         href={frame.href}
         className="lookbook-image-link"
         aria-label={frame.title}
@@ -116,14 +116,14 @@ function LookbookFrame({
           )}
         </div>
         <div className="lookbook-price-tag">{frame.price}</div>
-      </Link>
+      </TransitionLink>
       <div className="lookbook-copy">
         <p className="eyebrow">{frame.label}</p>
         <h2 className="lookbook-title">{frame.title}</h2>
         <p className="lookbook-sub">{frame.sub}</p>
-        <Link href={frame.href} className="lookbook-link">
+        <TransitionLink href={frame.href} className="lookbook-link">
           Acquire →
-        </Link>
+        </TransitionLink>
       </div>
     </div>
   );

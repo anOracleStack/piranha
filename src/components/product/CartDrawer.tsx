@@ -1,10 +1,10 @@
 "use client";
 
-import Link from "next/link";
 import { X } from "lucide-react";
 import { useEffect } from "react";
 import { formatMoney } from "@/lib/format";
 import { useCartStore } from "@/store/cart";
+import TransitionLink from "@/components/ui/TransitionLink";
 
 export default function CartDrawer() {
   const cart = useCartStore((state) => state.cart);
@@ -58,9 +58,9 @@ export default function CartDrawer() {
             <span>Subtotal</span>
             <strong>{formatMoney(cart?.cost.subtotalAmount ?? { amount: "0", currencyCode: "USD" })}</strong>
           </div>
-          <Link className="house-button button-gold button-lg justify-center" href={cart?.checkoutUrl ?? "/concierge"}>
+          <TransitionLink className="house-button button-gold button-lg justify-center" href={cart?.checkoutUrl ?? "/concierge"}>
             Begin private checkout
-          </Link>
+          </TransitionLink>
         </div>
       </aside>
     </div>

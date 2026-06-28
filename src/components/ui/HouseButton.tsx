@@ -1,6 +1,6 @@
-import Link from "next/link";
 import type { ComponentPropsWithoutRef, ReactNode } from "react";
 import { Loader2 } from "lucide-react";
+import TransitionLink from "./TransitionLink";
 
 type ButtonProps = ComponentPropsWithoutRef<"button"> & {
   variant?: "gold" | "vault" | "quiet";
@@ -9,7 +9,7 @@ type ButtonProps = ComponentPropsWithoutRef<"button"> & {
   children: ReactNode;
 };
 
-type LinkProps = ComponentPropsWithoutRef<typeof Link> & {
+type LinkProps = ComponentPropsWithoutRef<typeof TransitionLink> & {
   variant?: "gold" | "vault" | "quiet";
   size?: "sm" | "md" | "lg";
   children: ReactNode;
@@ -56,8 +56,8 @@ export function HouseLink({
   ...props
 }: LinkProps) {
   return (
-    <Link className={`house-button ${variantClass[variant]} ${sizeClass[size]} ${className}`} {...props}>
+    <TransitionLink className={`house-button ${variantClass[variant]} ${sizeClass[size]} ${className}`} {...props}>
       <span>{children}</span>
-    </Link>
+    </TransitionLink>
   );
 }

@@ -1,6 +1,6 @@
 import Image from "next/image";
-import Link from "next/link";
 import ScrollReveal from "@/components/motion/ScrollReveal";
+import TransitionLink from "@/components/ui/TransitionLink";
 import { formatMoney } from "@/lib/format";
 import type { Product } from "@/types";
 
@@ -29,7 +29,7 @@ export default function FeaturedGrid({ products }: { products: Product[] }) {
             key={product.id}
             delay={(Math.min(index * 100, 400) as 0 | 100 | 200 | 300 | 400)}
           >
-            <Link
+            <TransitionLink
               href={`/collections/${product.category}/${product.handle}`}
               className="featured-card-link bite-target"
               role="listitem"
@@ -69,7 +69,7 @@ export default function FeaturedGrid({ products }: { products: Product[] }) {
                   <p className="featured-card-dpp">NFC · Digital Passport</p>
                 )}
               </div>
-            </Link>
+            </TransitionLink>
           </ScrollReveal>
         ))}
       </div>

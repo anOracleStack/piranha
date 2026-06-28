@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import Link from "next/link";
 import { formatManufactureDate, getDPPByUUID, verifyDPPUrl } from "@/lib/dpp";
 import DPPVaultNotice from "./DPPVaultNotice";
+import TransitionLink from "@/components/ui/TransitionLink";
 
 interface DPPPageProps {
   params: Promise<{ hash: string }>;
@@ -88,9 +88,9 @@ function DPPError({ message }: { message: string }) {
         <Image src="/images/brand/logo-gold.svg" alt="" width={52} height={52} unoptimized />
         <h1>Passport unavailable</h1>
         <p>{message}</p>
-        <Link href="/" className="house-button button-quiet button-md justify-center">
+        <TransitionLink href="/" className="house-button button-quiet button-md justify-center">
           Return to house
-        </Link>
+        </TransitionLink>
       </section>
     </main>
   );

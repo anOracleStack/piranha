@@ -1,16 +1,12 @@
 "use client";
 
-import { type MouseEvent, type ReactNode } from "react";
+import { type MouseEvent, type ComponentPropsWithoutRef } from "react";
 import Link from "next/link";
 import { useZipper } from "@/contexts/ZipperContext";
 
-interface Props {
+type Props = ComponentPropsWithoutRef<typeof Link> & {
   href: string;
-  className?: string;
-  children: ReactNode;
-  "aria-label"?: string;
-  title?: string;
-}
+};
 
 /**
  * Drop-in replacement for next/link that triggers the zipper page transition
@@ -18,18 +14,22 @@ interface Props {
  */
 export default function TransitionLink({
   href,
-  className,
-  children,
-  "aria-label": ariaLabel,
-  title,
+  onClick,
+  ...props
 }: Props) {
   const { phase, trigger } = useZipper();
 
   function handleClick(e: MouseEvent<HTMLAnchorElement>) {
     // Allow modifier keys (open in new tab, etc.) to pass through normally
-    if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+    if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) {
+      onClick?.(e);
+      return;
+    }
     // Skip external links
-    if (href.startsWith("http")) return;
+    if (href.startsWith("http")) {
+      onClick?.(e);
+      return;
+    }
 
     e.preventDefault();
     trigger(href);
@@ -38,8 +38,8 @@ export default function TransitionLink({
   // If context is unavailable (e.g. during SSR or outside provider), fall back to Link
   if (phase === undefined) {
     return (
-      <Link href={href} className={className} aria-label={ariaLabel} title={title}>
-        {children}
+      <Link href={href} onClick={onClick} {...props}>
+        {props.children}
       </Link>
     );
   }
@@ -47,13 +47,11 @@ export default function TransitionLink({
   return (
     <Link
       href={href}
-      className={className}
-      aria-label={ariaLabel}
-      title={title}
       onClick={handleClick}
       prefetch
+      {...props}
     >
-      {children}
+      {props.children}
     </Link>
   );
 }

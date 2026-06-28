@@ -1,9 +1,9 @@
 "use client";
 
-import Link from "next/link";
 import { Check, Fingerprint, LockKeyhole, Minus, Plus, ShoppingBag } from "lucide-react";
 import { useMemo, useState } from "react";
 import { HouseButton } from "@/components/ui/HouseButton";
+import TransitionLink from "@/components/ui/TransitionLink";
 import { formatMoney } from "@/lib/format";
 import { useCartStore } from "@/store/cart";
 import type { Product } from "@/types";
@@ -70,10 +70,10 @@ export default function PurchaseModule({ product, dppUrl }: { product: Product; 
         <Spec label="Hardware" value={product.hardware} />
       </div>
 
-      <Link href={dppUrl} className="passport-link">
+      <TransitionLink href={dppUrl} className="passport-link">
         <Check className="size-4" aria-hidden />
         View digital passport
-      </Link>
+      </TransitionLink>
     </aside>
   );
 }

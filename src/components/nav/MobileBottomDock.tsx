@@ -1,9 +1,9 @@
 "use client";
 
-import Link from "next/link";
 import { Gem, Home, KeyRound, ShoppingBag, Shield } from "lucide-react";
 import { usePathname } from "next/navigation";
 import { useCartStore } from "@/store/cart";
+import TransitionLink from "@/components/ui/TransitionLink";
 
 const mobileItems = [
   { href: "/", label: "Home", icon: Home },
@@ -22,10 +22,10 @@ export default function MobileBottomDock() {
         const Icon = item.icon;
         const active = item.href === "/" ? pathname === "/" : pathname.startsWith(item.href);
         return (
-          <Link key={item.href} href={item.href} className={active ? "dock-item dock-item-active" : "dock-item"}>
+          <TransitionLink key={item.href} href={item.href} className={active ? "dock-item dock-item-active" : "dock-item"}>
             <Icon className="size-5" aria-hidden />
             <span>{item.label}</span>
-          </Link>
+          </TransitionLink>
         );
       })}
       <button className="dock-item" type="button" onClick={openCart}>

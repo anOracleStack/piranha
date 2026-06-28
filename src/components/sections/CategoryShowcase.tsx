@@ -1,8 +1,8 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
 import { useEffect, useRef } from "react";
+import TransitionLink from "@/components/ui/TransitionLink";
 
 const CATEGORIES = [
   {
@@ -55,7 +55,7 @@ export default function CategoryShowcase() {
     <section className="showcase-section" ref={shellRef} aria-label="Collections">
       <div className="showcase-grid">
         {CATEGORIES.map((cat, i) => (
-          <Link
+          <TransitionLink
             key={cat.href}
             href={cat.href}
             className="showcase-card"
@@ -82,7 +82,7 @@ export default function CategoryShowcase() {
               <p>{cat.sub}</p>
               <span className="showcase-cta">View collection →</span>
             </div>
-          </Link>
+          </TransitionLink>
         ))}
       </div>
     </section>
