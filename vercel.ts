@@ -4,7 +4,6 @@ export const config: VercelConfig = {
   framework: "nextjs",
   buildCommand: "npm run build",
   installCommand: "npm install",
-  regions: ["iad1", "lax1"],
   headers: [
     routes.cacheControl("/images/(.*)", {
       public: true,
