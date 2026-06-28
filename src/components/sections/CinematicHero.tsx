@@ -39,14 +39,24 @@ export default function CinematicHero() {
       <div className="hero-grid-lines" aria-hidden />
 
       <div className="hero-media hero-media-enter" ref={mediaRef} aria-hidden>
-        <Image
-          src="/images/products/obsidian-weekender.png"
-          alt=""
-          width={900}
-          height={675}
-          priority
-          unoptimized
-        />
+        <video
+          className="hero-video"
+          autoPlay
+          muted
+          loop
+          playsInline
+          poster="/video/hero-poster.avif"
+        >
+          <source src="/video/hero-4k.webm" type="video/webm" />
+          <Image
+            src="/images/products/obsidian-weekender.png"
+            alt=""
+            width={900}
+            height={675}
+            priority
+            unoptimized
+          />
+        </video>
       </div>
 
       <div className="hero-copy">

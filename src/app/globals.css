@@ -368,9 +368,12 @@ svg {
   filter: drop-shadow(0 40px 80px rgba(0, 0, 0, 0.7));
 }
 
-.hero-media img {
+.hero-media img,
+.hero-media video {
   width: 100%;
   height: auto;
+  display: block;
+  object-fit: cover;
 }
 
 .hero-copy {
