@@ -8,7 +8,7 @@ import { HouseLink } from "@/components/ui/HouseButton";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const HEADLINE_WORDS = ["House", "of", "Piranha"];
+const HEADLINE_WORDS = ["HOUSE", "OF", "PIRANHA"];
 
 export default function CinematicHero() {
   const shellRef = useRef<HTMLElement>(null);
