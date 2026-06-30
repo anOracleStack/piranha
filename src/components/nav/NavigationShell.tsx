@@ -1,7 +1,6 @@
 "use client";
 
 import Image from "next/image";
-import { ShoppingBag, UserRound } from "lucide-react";
 import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 import SoundController from "@/components/ui/SoundController";
@@ -31,13 +30,23 @@ export default function NavigationShell() {
 
   return (
     <header className={`site-nav ${scrolled ? "site-nav-scrolled" : ""}`}>
-      {/* Brand mark — fish logo + text */}
+      {/* Brand mark — keyed-out gold piranha + stacked wordmark.
+          Top row (fish + "HOUSE OF") and bottom row ("PIRANHA") share the same
+          left/right edges, forming a clean rectangle lockup. */}
       <TransitionLink href="/" className="brand-mark" aria-label="House of Piranha home">
-        <Image src="/images/brand/logo-gold.svg" alt="" width={40} height={40} priority unoptimized />
-        <div className="brand-text">
-          <span className="brand-subtext">House of</span>
-          <span className="brand-maintext">Piranha</span>
-        </div>
+        <span className="brand-top">
+          <Image
+            className="brand-fish"
+            src="/images/brand/piranha-fish.png"
+            alt=""
+            width={834}
+            height={639}
+            priority
+            unoptimized
+          />
+          <span className="brand-houseof">House of</span>
+        </span>
+        <span className="brand-piranha">Piranha</span>
       </TransitionLink>
 
       <nav className="desktop-nav" aria-label="Primary navigation">

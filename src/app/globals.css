@@ -159,42 +159,50 @@ svg {
   backdrop-filter: blur(18px);
 }
 
+/* Brand lockup — two rows sharing identical left/right edges (a clean rectangle):
+   Top row:  [fish] ........ HOUSE OF   (space-between pins fish left, "of" right)
+   Bottom:   PIRANHA                    (widest element — defines the rectangle width)
+   Result: fish left edge ↔ P left edge; "of" right edge ↔ "a" right edge. */
 .brand-mark {
   display: inline-flex;
-  align-items: flex-start;
-  gap: clamp(6px, 1vw, 12px);
-  min-width: 0;
+  flex-direction: column;
+  align-items: stretch;
+  justify-self: start;
+  width: fit-content;
+  gap: 1px;
   color: var(--bone);
   font-family: var(--font-display);
   text-transform: uppercase;
-  font-weight: 700;
 }
 
-.brand-mark img {
-  flex: 0 0 auto;
-  width: clamp(32px, 5vw, 48px);
-  height: auto;
-}
-
-.brand-text {
+.brand-top {
   display: flex;
-  flex-direction: column;
-  gap: -2px;
-  line-height: 0.95;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 8px;
 }
 
-.brand-subtext {
-  display: block;
-  font-size: clamp(0.65rem, 0.9vw, 0.85rem);
-  letter-spacing: 0.08em;
+.brand-fish {
+  flex: 0 0 auto;
+  width: auto;
+  height: clamp(18px, 2.2vw, 24px);
+}
+
+.brand-houseof {
+  align-self: flex-end;
+  white-space: nowrap;
+  font-size: clamp(0.55rem, 0.75vw, 0.7rem);
   font-weight: 600;
+  letter-spacing: 0.06em;
+  line-height: 1;
 }
 
-.brand-maintext {
-  display: block;
-  font-size: clamp(0.95rem, 1.5vw, 1.25rem);
-  letter-spacing: -0.01em;
+.brand-piranha {
+  white-space: nowrap;
+  font-size: clamp(1.45rem, 2.1vw, 1.85rem);
   font-weight: 800;
+  letter-spacing: 0.02em;
+  line-height: 0.9;
 }
 
 .desktop-nav {
@@ -362,75 +370,79 @@ svg {
   color: var(--bone);
 }
 
+/* Centered hero — the video is a full-bleed background and all copy is centered.
+   The layout is identical at every viewport; it only scales proportionally. */
 .hero-shell {
   position: relative;
   display: grid;
+  place-items: center;
   min-height: 100vh;
-  grid-template-columns: minmax(0, 0.92fr) minmax(360px, 0.68fr);
-  align-items: center;
-  justify-items: center;
-  gap: clamp(24px, 6vw, 82px);
-  padding: clamp(80px, 10vh, 116px) clamp(16px, 4vw, 56px);
+  padding: clamp(96px, 12vh, 140px) clamp(16px, 4vw, 56px) clamp(72px, 9vh, 110px);
   overflow: hidden;
-  width: min(100%, var(--max));
-  margin: 0 auto;
+  text-align: center;
 }
 
 .hero-shell::before {
   content: "";
   position: absolute;
   inset: 0;
+  z-index: 1;
   background:
-    linear-gradient(90deg, rgba(5, 5, 5, 0.12), rgba(5, 5, 5, 0.86)),
-    repeating-linear-gradient(105deg, transparent 0 19px, rgba(212, 175, 55, 0.055) 20px 21px);
+    radial-gradient(ellipse at center, rgba(5, 5, 5, 0.5) 0%, rgba(5, 5, 5, 0.88) 100%),
+    repeating-linear-gradient(105deg, transparent 0 19px, rgba(212, 175, 55, 0.04) 20px 21px);
   pointer-events: none;
 }
 
 .hero-media {
-  position: relative;
-  z-index: 1;
-  width: min(56vw, 680px);
-  min-width: 300px;
-  justify-self: center;
-  mask-image: linear-gradient(115deg, black 0 78%, transparent 78% 100%);
-  filter: drop-shadow(0 40px 80px rgba(0, 0, 0, 0.7));
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
 }
 
 .hero-media img,
 .hero-media video {
   width: 100%;
-  height: auto;
+  height: 100%;
   display: block;
   object-fit: cover;
+  opacity: 0.5;
 }
 
 .hero-copy {
   position: relative;
   z-index: 2;
-  max-width: 620px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 1000px;
 }
 
 .hero-copy h1 {
   margin: 14px 0 18px;
   font-family: var(--font-display);
-  font-size: clamp(4rem, 10vw, 9.6rem);
+  font-size: clamp(4rem, 11vw, 10rem);
   font-weight: 800;
-  line-height: 0.82;
+  line-height: 0.86;
   text-transform: uppercase;
   letter-spacing: -0.02em;
+  text-align: center;
 }
 
 .hero-copy > p:not(.eyebrow) {
-  max-width: 520px;
-  margin: 0;
+  max-width: 560px;
+  margin: 0 auto;
   color: var(--bone-dim);
   font-size: clamp(1rem, 2vw, 1.3rem);
   line-height: 1.7;
+  text-align: center;
 }
 
 .hero-actions {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   gap: 12px;
   margin-top: 34px;
 }
@@ -438,12 +450,13 @@ svg {
 .hero-product-strip {
   position: absolute;
   z-index: 2;
-  left: var(--gutter);
-  right: var(--gutter);
+  left: 50%;
   bottom: 22px;
+  transform: translateX(-50%);
+  width: min(100%, 720px);
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  border-top: 1px solid var(--border);
+  border-top: 1px solid var(--house-gold);
   color: var(--bone-dim);
   font-family: var(--font-utility);
   font-size: 0.72rem;
@@ -453,6 +466,7 @@ svg {
 
 .hero-product-strip span {
   padding: 18px 0;
+  text-align: center;
 }
 
 .section-shell,
@@ -502,7 +516,10 @@ svg {
   overflow: hidden;
 }
 
+/* Ornate museum-quality gold frame: thick gilt border + inner hairline +
+   decorative corner brackets layered on top of the product image. */
 .product-visual {
+  position: relative;
   display: grid;
   aspect-ratio: 4 / 3;
   min-height: 0;
@@ -513,20 +530,44 @@ svg {
   overflow: hidden;
   border: 3px solid var(--house-gold);
   box-shadow:
-    inset 0 0 0 1px rgba(212, 175, 55, 0.4),
-    0 0 20px rgba(212, 175, 55, 0.2);
-  position: relative;
+    inset 0 0 22px rgba(0, 0, 0, 0.55),
+    0 0 26px rgba(212, 175, 55, 0.18);
 }
 
+/* Inner hairline frame */
 .product-visual::before {
   content: '';
   position: absolute;
-  inset: 8px;
-  border: 1px solid rgba(212, 175, 55, 0.3);
+  inset: 10px;
+  z-index: 2;
+  border: 1px solid rgba(212, 175, 55, 0.5);
   pointer-events: none;
 }
 
+/* Gilt corner brackets — four L-shaped accents */
+.product-visual::after {
+  content: '';
+  position: absolute;
+  inset: 6px;
+  z-index: 2;
+  pointer-events: none;
+  --c: var(--house-gold-bright);
+  --s: 20px;
+  --t: 2px;
+  background:
+    linear-gradient(var(--c), var(--c)) top left / var(--s) var(--t) no-repeat,
+    linear-gradient(var(--c), var(--c)) top left / var(--t) var(--s) no-repeat,
+    linear-gradient(var(--c), var(--c)) top right / var(--s) var(--t) no-repeat,
+    linear-gradient(var(--c), var(--c)) top right / var(--t) var(--s) no-repeat,
+    linear-gradient(var(--c), var(--c)) bottom left / var(--s) var(--t) no-repeat,
+    linear-gradient(var(--c), var(--c)) bottom left / var(--t) var(--s) no-repeat,
+    linear-gradient(var(--c), var(--c)) bottom right / var(--s) var(--t) no-repeat,
+    linear-gradient(var(--c), var(--c)) bottom right / var(--t) var(--s) no-repeat;
+}
+
 .product-visual img {
+  position: relative;
+  z-index: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -1199,10 +1240,6 @@ svg {
     display: none;
   }
 
-  .hero-media {
-    width: min(60vw, 520px);
-  }
-
   .purchase-module {
     position: relative;
     top: auto;
@@ -1212,10 +1249,6 @@ svg {
 @media (max-width: 720px) {
   .site-nav {
     padding: 14px clamp(12px, 3vw, 16px);
-  }
-
-  .brand-mark span {
-    display: none;
   }
 
   .nav-actions .icon-button:not(.cart-button) {
@@ -1269,13 +1302,11 @@ svg {
 @keyframes hero-media-in {
   from {
     opacity: 0;
-    transform: translateY(32px) scale(0.98);
-    filter: drop-shadow(0 40px 80px rgba(0, 0, 0, 0.7));
+    transform: scale(1.04);
   }
   to {
     opacity: 1;
-    transform: translateY(0) scale(1);
-    filter: drop-shadow(0 40px 80px rgba(0, 0, 0, 0.7));
+    transform: scale(1);
   }
 }
 
@@ -1295,6 +1326,7 @@ svg {
 .hero-grid-lines {
   position: absolute;
   inset: 0;
+  z-index: 1;
   background-image:
     repeating-linear-gradient(90deg, transparent 0 59px, rgba(212, 175, 55, 0.04) 60px 61px),
     repeating-linear-gradient(180deg, transparent 0 79px, rgba(212, 175, 55, 0.03) 80px 81px);
@@ -1304,11 +1336,13 @@ svg {
 .hero-h1 {
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
 
 .hero-word {
   display: block;
   line-height: 0.88;
+  text-align: center;
 }
 
 /* ── Marquee strip ───────────────────────────────────── */
@@ -2217,11 +2251,11 @@ svg {
   animation: pendant-swing 0.45s ease-in-out infinite;
 }
 
-/* ── Piranha cursor (left-facing) */
+/* ── Piranha cursor — left-facing gold fish (the brand mark faces right) */
 :root {
-  cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"><path d="M8 8 L16 16 L14 20 L10 18 L8 22 L6 16 Z" fill="%23D4AF37" stroke="%23D4AF37" stroke-width="0.5"/><path d="M10 14 C12 12 14 12 16 14" fill="none" stroke="%23D4AF37" stroke-width="1" stroke-linecap="round"/><circle cx="12" cy="13" r="1.5" fill="%23D4AF37"/></svg>') 8 8, auto;
+  cursor: url('/images/brand/cursor-fish.png') 6 16, auto;
 }
 
 button, a, [role="button"] {
-  cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"><path d="M8 8 L16 16 L14 20 L10 18 L8 22 L6 16 Z" fill="%23D4AF37" stroke="%23D4AF37" stroke-width="0.5"/><path d="M10 14 C12 12 14 12 16 14" fill="none" stroke="%23D4AF37" stroke-width="1" stroke-linecap="round"/><circle cx="12" cy="13" r="1.5" fill="%23D4AF37"/></svg>') 8 8, pointer;
+  cursor: url('/images/brand/cursor-fish.png') 6 16, pointer;
 }
