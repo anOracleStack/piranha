@@ -181,8 +181,8 @@ svg {
 .brand-top {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  gap: 0.3em;
+  justify-content: flex-start;
+  gap: 0.13em;
 }
 
 .brand-fish {
@@ -194,7 +194,7 @@ svg {
 .brand-houseof {
   align-self: flex-end;
   white-space: nowrap;
-  font-size: 0.5em;
+  font-size: 0.56em;
   font-weight: 600;
   letter-spacing: 0.1em;
   line-height: 1;
