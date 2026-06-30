@@ -164,12 +164,15 @@ svg {
    Bottom:   PIRANHA                    (widest element — defines the rectangle width)
    Result: fish left edge ↔ P left edge; "of" right edge ↔ "a" right edge. */
 .brand-mark {
+  /* Single base size drives the whole lockup; everything below is in em so the
+     proportions (and the fish↔P / "of"↔"a" alignment) hold at every viewport. */
+  font-size: clamp(1.4rem, 2vw, 1.8rem);
   display: inline-flex;
   flex-direction: column;
   align-items: stretch;
   justify-self: start;
   width: fit-content;
-  gap: 1px;
+  gap: 0.04em;
   color: var(--bone);
   font-family: var(--font-display);
   text-transform: uppercase;
@@ -177,29 +180,29 @@ svg {
 
 .brand-top {
   display: flex;
-  align-items: flex-end;
+  align-items: center;
   justify-content: space-between;
-  gap: 8px;
+  gap: 0.3em;
 }
 
 .brand-fish {
   flex: 0 0 auto;
   width: auto;
-  height: clamp(18px, 2.2vw, 24px);
+  height: 1.12em;
 }
 
 .brand-houseof {
   align-self: flex-end;
   white-space: nowrap;
-  font-size: clamp(0.55rem, 0.75vw, 0.7rem);
+  font-size: 0.5em;
   font-weight: 600;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.1em;
   line-height: 1;
 }
 
 .brand-piranha {
   white-space: nowrap;
-  font-size: clamp(1.45rem, 2.1vw, 1.85rem);
+  font-size: 1em;
   font-weight: 800;
   letter-spacing: 0.02em;
   line-height: 0.9;
