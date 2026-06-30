@@ -31,11 +31,13 @@ export default function NavigationShell() {
 
   return (
     <header className={`site-nav ${scrolled ? "site-nav-scrolled" : ""}`}>
-      {/* Brand mark — uses high-quality piranha-logo.jpeg */}
+      {/* Brand mark — fish logo + text */}
       <TransitionLink href="/" className="brand-mark" aria-label="House of Piranha home">
-        <Image src="/piranha-logo.jpeg" alt="" width={36} height={36} priority unoptimized />
-        <span>House of</span>
-        <span>Piranha</span>
+        <Image src="/images/brand/logo-gold.svg" alt="" width={40} height={40} priority unoptimized />
+        <div className="brand-text">
+          <span className="brand-subtext">House of</span>
+          <span className="brand-maintext">Piranha</span>
+        </div>
       </TransitionLink>
 
       <nav className="desktop-nav" aria-label="Primary navigation">
