@@ -2256,9 +2256,9 @@ svg {
 
 /* ── Piranha cursor — left-facing gold fish (the brand mark faces right) */
 :root {
-  cursor: url('/images/brand/cursor-fish.png') 6 16, auto;
+  cursor: url('/images/brand/cursor-fish.png') 4 12, auto;
 }
 
 button, a, [role="button"] {
-  cursor: url('/images/brand/cursor-fish.png') 6 16, pointer;
+  cursor: url('/images/brand/cursor-fish.png') 4 12, pointer;
 }
