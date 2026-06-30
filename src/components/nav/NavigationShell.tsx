@@ -34,7 +34,8 @@ export default function NavigationShell() {
       {/* Brand mark — uses high-quality piranha-logo.jpeg */}
       <TransitionLink href="/" className="brand-mark" aria-label="House of Piranha home">
         <Image src="/piranha-logo.jpeg" alt="" width={36} height={36} priority unoptimized />
-        <span>House of Piranha</span>
+        <span>House of</span>
+        <span>Piranha</span>
       </TransitionLink>
 
       <nav className="desktop-nav" aria-label="Primary navigation">
@@ -52,10 +53,17 @@ export default function NavigationShell() {
       <div className="nav-actions">
         <SoundController />
         <TransitionLink className="icon-button" href="/the-vault" aria-label="Open Vault" title="Open Vault">
-          <UserRound className="size-4" aria-hidden />
+          <svg className="size-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+            <rect x="3" y="11" width="18" height="11" rx="2" />
+            <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+          </svg>
         </TransitionLink>
-        <button className="icon-button cart-button" type="button" onClick={openCart} aria-label="Open cart" title="Open cart">
-          <ShoppingBag className="size-4" aria-hidden />
+        <button className="icon-button cart-button" type="button" onClick={openCart} aria-label="Open Cart" title="Open Cart">
+          <svg className="size-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+            <circle cx="9" cy="21" r="1" />
+            <circle cx="20" cy="21" r="1" />
+            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6" />
+          </svg>
           {total > 0 ? <span className="cart-count">{total}</span> : null}
         </button>
       </div>
