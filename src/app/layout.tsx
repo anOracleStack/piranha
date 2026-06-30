@@ -7,7 +7,6 @@ import NavigationShell from "@/components/nav/NavigationShell";
 import VaultTransition from "@/components/motion/VaultTransition";
 import ZipperOverlay from "@/components/motion/ZipperOverlay";
 import { ZipperProvider } from "@/contexts/ZipperContext";
-import CustomCursor from "@/components/ui/CustomCursor";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -53,7 +52,6 @@ export default function RootLayout({
           <CartDrawer />
           <ZipperOverlay />
         </ZipperProvider>
-        <CustomCursor />
         <Analytics />
         <SpeedInsights />
       </body>
