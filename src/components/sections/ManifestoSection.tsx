@@ -11,7 +11,7 @@ export default function ManifestoSection() {
           <div className="manifesto-crest-wrap">
             <div className="manifesto-crest-glow" aria-hidden />
             <Image
-              src="/images/brand/crest.svg"
+              src="/images/brand/logo-gold.svg"
               alt="House of Piranha Coat of Arms — The Piranha Crest"
               width={500}
               height={500}
